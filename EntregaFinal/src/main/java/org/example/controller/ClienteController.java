@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/cliente")
@@ -22,7 +23,7 @@ public class ClienteController {
 
     @PostMapping()
     public UsuarioModel guardarUsuario(@RequestBody UsuarioModel usuario){
-        return this.usuarioService.guardarUsuarios(usuario);
+        return this.usuarioService.guardarUsuario(usuario);
     }
 
     @GetMapping( path = "/{id}")

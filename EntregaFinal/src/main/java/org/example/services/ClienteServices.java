@@ -1,11 +1,17 @@
 package org.example.services;
 
+import org.example.models.UsuarioModel;
+import org.example.repository.CLienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class ClienteServices {
     @Autowired
-    UsuarioRepository usuarioRepository;
+    CLienteRepository usuarioRepository;
 
     public ArrayList<UsuarioModel> obtenerUsuarios(){
         return (ArrayList<UsuarioModel>) usuarioRepository.findAll();
@@ -20,7 +26,7 @@ public class ClienteServices {
     }
 
 
-    public ArrayList<UsuarioModel>  obtenerPorPrioridad(Integer prioridad) {
+    public ArrayList<UsuarioModel> obtenerPorPrioridad(Integer prioridad) {
         return usuarioRepository.findByPrioridad(prioridad);
     }
 
